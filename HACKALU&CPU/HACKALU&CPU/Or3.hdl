@@ -1,0 +1,9 @@
+CHIP Or3
+{
+	//This function gives or of 3 inputs
+	IN a,b,c;
+	OUT out;
+	PARTS:
+	Or(a=a,b=b,out=p1);
+	Or(a=p1,b=c,out=out);
+}

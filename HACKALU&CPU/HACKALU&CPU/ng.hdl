@@ -1,0 +1,10 @@
+CHIP ng
+{
+	//This gives output if final out is < 0 then ng is 1
+	//if final out is>=0 then ng is 0
+	IN x[16];
+	OUT ng;
+	PARTS:
+	And(a=x[15],b=x[15],out=ng);
+
+}

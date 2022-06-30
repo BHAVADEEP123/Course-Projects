@@ -1,0 +1,39 @@
+CHIP HackCPU
+{
+        //This is the complete chip for HackCPU
+
+	IN inM[16],instruction[16],reset;
+	OUT outM[16],writeM,addressM[15],pc[15];
+
+	PARTS:
+	//Input for mux are instruction bus and output from the ALU with select line as the most significant bit of instruction bus
+	Mux16(a=instruction,b=outalu,sel=instruction[15],out=outMux1);
+	And(a=instruction[3],b=instruction[15],out=writeM);
+	And(a=instruction[4],b=instruction[15],out=writeD);
+	And(a=instruction[5],b=instruction[15],out=insWriteA);
+	Not(in=instruction[15],out=addWriteA);
+	Or(a=insWriteA,b=addWriteA,out=writeA);
+ 	//Aregister inputs are output of MUX1 and writeA as load and giving output addressM which is also duplicated into outRegA
+	ARegister(in=outMux1,load=writeA,out[0..14]=addressM,out=outRegA);
+	Mux16(a=outRegA,b=inM,sel=instruction[12],out=outMux2);
+	//Dregister Chip
+	DRegister(in=outalu,load=writeD,out=outRegD);
+	//ALU with appropriate input pins from instruction bus
+	HackALU(x=outRegD,y=outMux2,zx=instruction[11],nx=instruction[10],zy=instruction[9],ny=instruction[8],f=instruction[7],no=instruction[6],out=outalu,out=outM,zr=zero,ng=negitive);
+	//for determining jumps
+	Not(in=zero,out=notzero);
+	Not(in=negitive,out=notnegitive);
+	And(a=notzero,b=notnegitive,out=posi);
+	And(a=instruction[0],b=instruction[15],out=insJumpPos);
+	And(a=instruction[1],b=instruction[15],out=insJumpZero);
+	And(a=instruction[2],b=instruction[15],out=insJumpNeg);
+	And(a=insJumpPos,b=posi,out=jumppos);
+	And(a=insJumpZero,b=zero,out=jumpzero);
+	And(a=insJumpNeg,b=negitive,out=jumpneg);
+	Or3(a=jumppos,b=jumpzero,c=jumpneg,out=jump);
+	Not(in=jump,out=notjump);
+	//Programming counter
+	PC(in=outRegA,load=jump,inc=notjump,reset=reset,out[0..14]=pc);	
+
+	
+}

@@ -1,0 +1,9 @@
+CHIP And3
+{
+	//This function gives output of and operation of 3 inputs
+	IN a,b,c;
+	OUT out;
+	PARTS:
+        And(a=a,b=b,out=p1);
+	And(a=c,b=p1,out=out);
+}

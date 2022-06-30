@@ -1,0 +1,12 @@
+CHIP Or4
+{
+   //This function gives or of 4 inputs
+   IN a,b,c,d;
+   OUT out;
+  
+   PARTS:
+   Or(a=a,b=b,out=ab);
+   Or(a=ab,b=c,out=abc);
+   Or(a=abc,b=d,out=out);
+
+}

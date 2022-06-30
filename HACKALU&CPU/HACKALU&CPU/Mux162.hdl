@@ -1,0 +1,62 @@
+CHIP Mux162
+{
+	//it is to select from + and & between two variables
+	IN x[16],y[16],f;
+	OUT out[16];
+	PARTS:
+	Not(in=f,out=nf);
+	And(a=f,b=x[0],out=x0);
+	And(a=f,b=x[1],out=x1);
+	And(a=f,b=x[2],out=x2);
+	And(a=f,b=x[3],out=x3);
+	And(a=f,b=x[4],out=x4);
+	And(a=f,b=x[5],out=x5);
+	And(a=f,b=x[6],out=x6);
+	And(a=f,b=x[7],out=x7);
+	And(a=f,b=x[8],out=x8);
+	And(a=f,b=x[9],out=x9);
+	And(a=f,b=x[10],out=x10);
+	And(a=f,b=x[11],out=x11);
+	And(a=f,b=x[12],out=x12);
+	And(a=f,b=x[13],out=x13);
+	And(a=f,b=x[14],out=x14);
+	And(a=f,b=x[15],out=x15);
+
+	And(a=nf,b=y[0],out=y0);
+	And(a=nf,b=y[1],out=y1);
+	And(a=nf,b=y[2],out=y2);
+	And(a=nf,b=y[3],out=y3);
+	And(a=nf,b=y[4],out=y4);
+	And(a=nf,b=y[5],out=y5);
+	And(a=nf,b=y[6],out=y6);
+	And(a=nf,b=y[7],out=y7);
+	And(a=nf,b=y[8],out=y8);
+	And(a=nf,b=y[9],out=y9);
+	And(a=nf,b=y[10],out=y10);
+	And(a=nf,b=y[11],out=y11);
+	And(a=nf,b=y[12],out=y12);
+	And(a=nf,b=y[13],out=y13);
+	And(a=nf,b=y[14],out=y14);
+	And(a=nf,b=y[15],out=y15);
+
+	Or(a=x0,b=y0,out=out[0]);
+	Or(a=x1,b=y1,out=out[1]);
+	Or(a=x2,b=y2,out=out[2]);
+	Or(a=x3,b=y3,out=out[3]);
+	Or(a=x4,b=y4,out=out[4]);
+	Or(a=x5,b=y5,out=out[5]);
+	Or(a=x6,b=y6,out=out[6]);
+	Or(a=x7,b=y7,out=out[7]);
+	Or(a=x8,b=y8,out=out[8]);
+	Or(a=x9,b=y9,out=out[9]);
+	Or(a=x10,b=y10,out=out[10]);
+	Or(a=x11,b=y11,out=out[11]);
+	Or(a=x12,b=y12,out=out[12]);
+	Or(a=x13,b=y13,out=out[13]);
+	Or(a=x14,b=y14,out=out[14]);
+	Or(a=x15,b=y15,out=out[15]);
+
+
+
+
+}

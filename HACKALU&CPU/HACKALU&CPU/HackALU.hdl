@@ -1,0 +1,22 @@
+CHIP HackALU
+{
+	//This chip of HACK ALU
+	IN x[16],y[16],zx,nx,zy,ny,f,no;
+	OUT out[16],zr,ng;
+	PARTS:
+	
+	mux16b(x=x,zx=zx,out=l10);
+	mux16b(x=y,zx=zy,out=l11);
+	xnor16(x=l10,nx=nx,out=l20);
+	xnor16(x=l11,nx=ny,out=l21);
+	HLA(x=l20,y=l21,s=l30);
+	and16b(x=l20,y=l21,out=l31);
+	Mux162(x=l30,y=l31,f=f,out=l40);
+	xnor16(x=l40,nx=no,out=out);
+	xnor16(x=l40,nx=no,out=p);
+	ng(x=p,ng=ng);
+	zr(x=p,zr=zr);
+
+
+	
+}

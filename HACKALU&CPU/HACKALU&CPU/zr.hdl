@@ -1,0 +1,12 @@
+CHIP zr
+{
+	//zr is 1 if out=0 else it is 0
+	IN x[16];
+	OUT zr;
+	PARTS:
+	Or5(a=x[0],b=x[1],c=x[2],d=x[3],e=x[4],out=out0);
+	Or5(a=x[5],b=x[6],c=x[7],d=x[8],e=x[9],out=out1);
+	Or5(a=x[10],b=x[11],c=x[12],d=x[13],d=x[14],out=out2);
+	Or4(a=x[15],b=out0,c=out1,d=out2,out=zr1);
+	Not(in=zr1,out=zr);
+}

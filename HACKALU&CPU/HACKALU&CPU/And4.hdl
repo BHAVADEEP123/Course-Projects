@@ -1,0 +1,11 @@
+CHIP And4
+{
+	//This function gives output of and operation of 4 inputs
+  	IN a,b,c,d;
+  	OUT out;
+  
+  	PARTS:
+   	And(a=a,b=b,out=ab);
+   	And(a=ab,b=c,out=abc);
+  	And(a=abc,b=d,out=out);
+}

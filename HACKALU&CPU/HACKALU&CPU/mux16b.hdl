@@ -1,0 +1,26 @@
+CHIP mux16b
+{
+	//it is 16 bit 2 to 1 mux for first step
+	IN x[16],zx;
+	OUT out[16];
+	PARTS:
+	Not(in=zx,out=z);
+	And(a=x[0],b=z,out=out[0]);
+	And(a=x[1],b=z,out=out[1]);
+	And(a=x[2],b=z,out=out[2]);
+	And(a=x[3],b=z,out=out[3]);
+	And(a=x[4],b=z,out=out[4]);
+	And(a=x[5],b=z,out=out[5]);
+	And(a=x[6],b=z,out=out[6]);
+	And(a=x[7],b=z,out=out[7]);
+	And(a=x[8],b=z,out=out[8]);
+	And(a=x[9],b=z,out=out[9]);
+	And(a=x[10],b=z,out=out[10]);
+	And(a=x[11],b=z,out=out[11]);
+	And(a=x[12],b=z,out=out[12]);
+	And(a=x[13],b=z,out=out[13]);
+	And(a=x[14],b=z,out=out[14]);
+	And(a=x[15],b=z,out=out[15]);
+	
+
+}
