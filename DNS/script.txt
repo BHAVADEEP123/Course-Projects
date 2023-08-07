@@ -1,0 +1,19 @@
+Script started on 2023-03-04 14:12:33+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;bhavadeep@DESKTOP-4TV8FAR: ~/cs20b015-test[01;32mbhavadeep@DESKTOP-4TV8FAR[00m:[01;34m~/cs20b015-test[00m$ exitpython3 client.py 3080 input.txt[18Pexplorer.exe .python3 client.py 3080 input.txt[C[1P[1P[1P[1P[1P[1P[1@l[15@ab2-cs20b015.py[C[C[C[1P[1P[1P
+[?2004lEnter Server Name: www.shop.com
+DNS Mapping :  133.54.5.1
+Enter Server Name: ftp.ca ouger.com  d e d  edu
+No DNS Record Found
+Enter Server Name: ^[[A^[[B        ftp.coua gar.edu
+DNS Mapping :  212.18.35.3
+Enter Server Name: www.    ft  vpn.sho   store.com
+DNS Mapping :  143.11.5.25
+Enter Server Name: bye
+All Server Processes are killed. Exiting.
+[?2004h]0;bhavadeep@DESKTOP-4TV8FAR: ~/cs20b015-test[01;32mbhavadeep@DESKTOP-4TV8FAR[00m:[01;34m~/cs20b015-test[00m$ exit
+[?2004lexit
+
+Script done on 2023-03-04 14:13:26+05:30 [COMMAND_EXIT_CODE="0"]
